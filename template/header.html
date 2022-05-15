@@ -1,0 +1,39 @@
+{{define "header"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/assets/css/all.min.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <title>{{.Title}}</title>
+    </head>
+    <body>
+    <header>
+        <nav>
+            <div class="nav_left">
+                <a href="/"><div class="head__main">TestsOnline</div></a>
+                {{ if eq .Title "Главная"}}
+                    <input type="text" class="search" id="search" placeholder="Поиск теста">
+                {{end}}
+            </div>
+            {{ if eq .Id 0}}
+                <div class="head_el2">
+                    <a href="/login"><div class="log">Вход</div></a>
+                    <a href="/registration"><div class="reg">Регистрация</div></a>
+                </div>
+            {{ else }}
+                <div class="head_el2">
+                    {{ if eq .Role "Admin" }}
+                        <a href="/create"><div class="reg">Создать тест</div></a>
+                        <a href="/search_request"><div class="log">Поиск результатов</div></a>
+                    {{ end }}
+                    <a href="/test_results"><div class="log">Результаты</div></a>
+                    <a href="/profile"><div class="reg" id="profile">{{ .Name }}</div></a>
+                    <div class="log" id="exit">Выйти</div>
+                </div>
+            {{ end }}
+        </nav>
+    </header>
+{{end}}

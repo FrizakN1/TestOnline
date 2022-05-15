@@ -1,0 +1,14 @@
+{{ define "login" }}
+    {{template "header" .}}
+    <div class="main">
+        <div class="main__position">
+            <h1>Вход</h1>
+            <h2>Электронная почта</h2>
+            <input type="text" name="email" id="emailLogin" placeholder="E-mail" class="mail"><br>
+            <h2>Пароль</h2>
+            <input type="password" name="password" id="password" placeholder="Пароль" class="password"><br>
+            <button class="btn-sumbit" onclick="login()">Войти</button>
+        </div>
+    </div>
+    {{template "footer" .}}
+{{ end }}

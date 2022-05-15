@@ -1,0 +1,10 @@
+{{define "results"}}
+    {{template "header" .}}
+        <div class="main">
+            <!--max 190-->
+            {{ range $i := .Results }}
+            <div class="test">{{ $i.Test.TestName }}<div class="test__btn">{{ $i.Result }}</div></div>
+            {{ end }}
+        </div>
+    {{template "footer"}}
+{{ end }}

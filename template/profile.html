@@ -1,0 +1,35 @@
+{{define "profile"}}
+{{template "header" .}}
+<div class="main">
+    <div class="user_block">
+        <div class="user">
+            <div class="user_data">
+                <div class="user_data_element">Имя:</div>
+                <div class="user_data_element">Фамилия:</div>
+                <div class="user_data_element">Почта:</div>
+                <div class="user_data_element">Пароль:</div>
+            </div>
+            <div class="user_data user_data1">
+                <div class="user_data_element">
+                    <div>{{.Name}}</div>
+                    <div class="edit">Изменить</div>
+                </div>
+                <div class="user_data_element">
+                    <div>{{.Surname}}</div>
+                    <div class="edit">Изменить</div>
+                </div>
+                <div class="user_data_element">
+                    <div>{{.Email}}</div>
+                    <div class="edit">Изменить</div>
+                </div>
+                <div class="user_data_element">
+                    <div>*****</div>
+                    <div class="edit">Изменить</div>
+                </div>
+            </div>
+        </div>
+<!--        <button class="btn-sumbit" id="editProfile">Изменить данные</button>-->
+    </div>
+</div>
+{{template "footer"}}
+{{end}}

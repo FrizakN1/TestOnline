@@ -1,0 +1,10 @@
+{{ define "index" }}
+    {{template "header" .}}
+    <div class="main">
+        <!--max 190-->
+        {{range $i := .Tests}}
+            <div class="test" id="test{{ $i.Id }}">{{ $i.Name }}<a href="/test/{{ $i.Id }}" class="test__btn">Пройти</a></div>
+        {{ end }}
+    </div>
+    {{template "footer"}}
+{{ end }}

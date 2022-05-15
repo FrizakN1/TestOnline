@@ -1,0 +1,47 @@
+{{define "test"}}
+    {{template "header" .}}
+        <div class="main" id="TestCollect{{.TestID}}">
+            {{range $i, $el := .Test}}
+                {{if eq $el.QuestionType "defBlock"}}
+                    <div class="test_block" id="defBlock{{ $el.QuestionID }}">
+                        <h3 id="Question{{$el.QuestionID}}">{{ $el.Question }}</h3>
+                        {{range $j, $vl := $el.Value}}
+                            <input type="radio" name="question{{ $el.QuestionID }}" id="test_value{{ $el.QuestionID }}/{{$j}}" value="{{$vl}}">
+                            <label for="test_value{{ $el.QuestionID }}/{{$j}}" class="radio-style1">{{$vl}}</label><br>
+                        {{end}}
+                    </div>
+                {{end}}
+                {{if eq $el.QuestionType "checkBox"}}
+                    <div class="test_block" id="checkBox{{ $el.QuestionID }}">
+                        <h3 id="Question{{$el.QuestionID}}">{{ $el.Question }}</h3>
+                        {{range $j, $vl := $el.Value}}
+                            <input type="checkbox" id="checkBox{{$el.QuestionID}}/{{$j}}" value="{{$vl}}">
+                            <label class="checkbox-style-3" for="checkBox{{$el.QuestionID}}/{{$j}}">{{$vl}}</label>
+                        {{end}}
+                    </div>
+                {{end}}
+                {{if eq $el.QuestionType "selectBlock"}}
+                    <div class="test_block_s" id="selectBlock{{ $el.QuestionID }}">
+                        <div class="test_block_bar" id="selectBlock1">
+                            <div class="test_block_s_title">Вопросы</div>
+                            <div class="test_block_s_title">Ответы</div>
+                        </div>
+                        <div class="test_block_table">
+                            {{range $j, $vl := $el.Value}}
+                                <div class="test_block_bar">
+                                    <div class="test_block_s_left">{{$vl}}</div>
+                                    <select name="answers" class="test_block_s_right">
+                                        {{range $k, $an := $el.Answer}}
+                                            <option>{{$an}}</option>
+                                        {{end}}
+                                    </select>
+                                </div>
+                            {{end}}
+                        </div>
+                    </div>
+                {{end}}
+            {{end}}
+            <button class="btn-sumbit" id="Finish">Закончить</button>
+        </div>
+    {{template "footer"}}
+{{end}}

@@ -1,0 +1,24 @@
+{{ define "registration"}}
+    {{template "header" .}}
+    <div class="main">
+        <h1>Создание аккаунта</h1>
+        <div class="asd">
+            <input type="text" name="name" id="name" placeholder="Имя" class="name">
+            <input type="text" name="surname" id="surname" placeholder="Фамилия" class="name"><br>
+        </div>
+        <h2>Пол</h2>
+        <div class="stateStyle" id="stateStyle">
+            <input type="radio" name="state" id="male" value="Мужской">
+            <label class="radio-style" for="male">Мужской</label>
+            <input type="radio" name="state" id="famale" value="Женский">
+            <label class="radio-style" for="famale">Женский</label>
+        </div>
+        <h2>Электронная почта</h2>
+        <input type="text" name="email" id="email" placeholder="E-mail" class="mail">
+        <h2>Пароль</h2>
+        <input type="password" name="password" id="password" placeholder="Пароль" class="password">
+        <input type="password" name="repassword" id="repassword" placeholder="Повторите пароль" class="password">
+        <button type="submit" class="btn-sumbit" onclick="checkForm()">Создать</button>
+    </div>
+    {{template "footer"}}
+{{ end }}

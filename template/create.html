@@ -1,0 +1,23 @@
+{{ define "create" }}
+    {{template "header" .}}
+    <div class="main">
+        <textarea name="tit" id="tit" class="title_textarea" placeholder="Введите название теста"></textarea>
+        <div class="createBlocks" id="createBlocks">
+        </div>
+        <button type="submit" class="btn-add" id="saveTest">Создать тест</button>
+        <div class="create">
+            <div class="create__buttons">
+                <div class="create_button" id="createDefBlock">
+                    <i class="far fa-dot-circle"></i>
+                </div>
+                <div class="create_button" id="createCheckboxBlock">
+                    <i class="fas fa-check-square"></i>
+                </div>
+                <div class="create_button" id="createSelectBlock">
+                    <i class="fas fa-caret-square-down"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{template "footer" .}}
+{{ end }}
