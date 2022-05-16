@@ -310,25 +310,6 @@ function checkCreate(){
     }
 }
 
-function Send(method, uri, data, callback) {
-    let xhr = new XMLHttpRequest();
-    xhr.open(method, uri);
-
-    xhr.onload = function (event) {
-        if (callback && typeof callback === "function") {
-            callback(JSON.parse(this.response));
-        }
-    }
-    if (data) {
-        // xhr.setRequestHeader("Content-Type", "multipart/form-data");
-        // xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-        xhr.send(data);
-    } else {
-        xhr.send();
-    }
-}
-
-
 let saveTest = document.getElementById('saveTest');
 if (saveTest){
     saveTest.onclick = () => {
@@ -378,7 +359,7 @@ if (saveTest){
             if (countSelectBlock > 0){
                 formData.append("selectBlock Question Count", countSelectBlock)
             }
-            Send("POST", "/create/save", formData, response => {
+            Send("POST", "/create/save", formData,2, response => {
                 if (response){
                     window.location.href = "/";
                 }
