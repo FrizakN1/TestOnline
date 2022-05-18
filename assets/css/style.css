@@ -79,7 +79,7 @@ body {
 }
 
 body::-webkit-scrollbar{
-  width: 13px;
+  width: 8px;
 }
 
 body::-webkit-scrollbar-track{
@@ -284,7 +284,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0px 10px 0px 10px;
+  margin: 0px 10px;
   border-radius: 15px;  
   padding: 8px 20px;
   font-weight: 700;
@@ -948,4 +948,18 @@ input:checked + .radio-style1:after {
   right: 1px;
   left: 10px;
   transform: rotate(-45deg);
+}
+
+.btns{
+  position: relative;
+  display: flex;
+}
+
+.control_window{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  top: 5px;
 }

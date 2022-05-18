@@ -17,6 +17,9 @@
                 {{ if eq .Title "Главная"}}
                     <input type="text" class="search" id="search" placeholder="Поиск теста">
                 {{end}}
+                {{ if eq .Title "Результаты"}}
+                    <input type="text" class="search" id="search" placeholder="Поиск теста">
+                {{end}}
             </div>
             {{ if eq .Id 0}}
                 <div class="head_el2">

@@ -367,3 +367,10 @@ if (saveTest){
         }
     }
 }
+
+let testBtn = document.getElementById('test_btn');
+if (testBtn){
+    testBtn.onclick = () => {
+
+    }
+}

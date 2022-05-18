@@ -1,9 +1,9 @@
 {
   "Address": "127.0.0.1",
   "Port": "8080",
-  "DbHost": "127.0.0.1",
+  "DbHost": "10.14.206.27",
   "DbPort": "5432",
-  "DbUser": "postgres",
-  "DbPass": "root",
+  "DbUser": "student",
+  "DbPass": "1234",
   "DbName": "testsonline"
 }
